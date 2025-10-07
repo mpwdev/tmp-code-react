@@ -69,9 +69,39 @@ function App() {
             ></CoreConcept>
             <CoreConcept {...CORE_CONCEPTS[3]}></CoreConcept>
           </ul>
+          <ul>
+            <TestCoreConcept
+              title="test title"
+              description="test description"
+              image="test-image.png"
+            ></TestCoreConcept>
+          </ul>
+          <ul>
+            <TestCoreConcept2 concept={CORE_CONCEPTS[0]}></TestCoreConcept2>
+          </ul>
         </section>
       </main>
     </div>
+  );
+}
+
+function TestCoreConcept({ title, description, image }) {
+  return (
+    <li>
+      <p>{title}</p>
+      <p>{description}</p>
+      <p>{image}</p>
+    </li>
+  );
+}
+
+function TestCoreConcept2({ concept }) {
+  return (
+    <li>
+      <p>{concept.title}</p>
+      <p>{concept.description}</p>
+      <p>{concept.image}</p>
+    </li>
   );
 }
 
